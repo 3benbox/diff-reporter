@@ -1,0 +1,25 @@
+apiVersion: keramik.3box.io/v1alpha1
+kind: Network
+metadata:
+  name: anchor-polling-stops
+spec:
+  casApiUrl: https://cas-qa.3boxlabs.com
+  ceramic:
+  - env:
+      CERAMIC_LOG_LEVEL: "0"
+    image: 3boxben/ceramic-prod:anchor-polling-loop
+    ipfs:
+      go:
+        image: ipfs/kubo:v0.19.1@sha256:c4527752a2130f55090be89ade8dde8f8a5328ec72570676b90f66e2cabf827d
+    resourceLimits:
+      storage: 3Gi
+  datadog:
+    enabled: true
+    profilingEnabled: true
+    version: "0"
+  ethRpcUrl: ""
+  networkType: dev-unstable
+  privateKeySecret: ceramic-v4-qa
+  pubsubTopic: ""
+  replicas: 1
+
