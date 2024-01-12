@@ -20,6 +20,5 @@ spec:
   ethRpcUrl: ""
   networkType: dev-unstable
   privateKeySecret: ceramic-v4-qa
-  pubsubTopic: ""
   replicas: 1
 
